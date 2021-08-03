@@ -39,8 +39,8 @@ namespace Files
         {
             var path = @"C:\Users\Garrett\source\repos\Files\Files\test.txt";
             string[] words;
-            string longestWord = "";
             var counter = 0;
+            var longestWordLocation = 0;
             var longestWordLength = 0;
 
             using (StreamWriter sw = File.CreateText(path))
@@ -58,14 +58,14 @@ namespace Files
             {
                 if (word.Length > longestWordLength)
                 {
-                    longestWord = word;
+                    longestWordLocation = counter;
                     longestWordLength = word.Length;
                 }
 
                 counter++;
             }
 
-            Console.WriteLine(longestWord);
+            Console.WriteLine(words[longestWordLocation]);
         }
     }
     class Program
